@@ -59,23 +59,28 @@
         <a href="#" class="button">Back to Top</a>
     </div>
 
-    <!-- Add more sections as needed -->
-
     <!-- Add the button to play dial-up internet sound -->
     <div class="container">
         <button class="button" onclick="playDialUpSound()">Play Dial-up Internet Sound</button>
+        <button class="button" onclick="stopAllAudio()">STOP ALL AUDIO</button>
     </div>
 
     <!-- Add the dial-up internet sound -->
     <audio id="dialUpSound" src="audio/dial-up-modem-01.mp3"></audio>
-    <button onclick="setVolume(0.2)">Play Sound</button>
 
     <script>
-      function setVolume(volume) {
-        var audio = document.getElementById("dialUpSound");
-        audio.volume = volume;
-        audio.play();
-      }
+        function playDialUpSound() {
+            var audio = document.getElementById("dialUpSound");
+            audio.volume = 0.5; // Set volume to 50%
+            audio.play();
+        }
+
+        function stopAllAudio() {
+            var allAudio = document.querySelectorAll("audio");
+            allAudio.forEach(function(audio) {
+                audio.pause();
+            });
+        }
     </script>
 
 </body>
