@@ -37,7 +37,9 @@
             font-size: 16px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            display: block; /* Changed to block */
+            width: fit-content; /* Added to adjust button width */
+            margin: 10px auto; /* Added to center buttons */
         }
 
         .button:hover {
@@ -62,6 +64,10 @@
     <!-- Add the button to play dial-up internet sound -->
     <div class="container">
         <button class="button" onclick="playDialUpSound()">Play Dial-up Internet Sound</button>
+    </div>
+    
+    <!-- Add the "Stop All Audio" button below the "Play Dial-up Internet Sound" button -->
+    <div class="container">
         <button class="button" onclick="stopAllAudio()">STOP ALL AUDIO</button>
     </div>
 
