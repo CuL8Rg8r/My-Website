@@ -6,17 +6,21 @@
     <title>1999 Website</title>
     <style>
         body {
-            background-image: url('images/1043.png'); /* Added background image */
-            background-repeat: repeat; /* Make the background image repeat */
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('images/1043.png');
+            background-size: cover;
+            background-repeat: repeat;
         }
 
         .container {
             width: 80%;
             margin: 0 auto;
             text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.75); /* 75% opacity black background */
+            color: #FFFFFF; /* White text color */
         }
 
         h1 {
@@ -38,9 +42,7 @@
             font-size: 16px;
             cursor: pointer;
             text-decoration: none;
-            display: block;
-            width: fit-content;
-            margin: 10px auto;
+            display: inline-block;
         }
 
         .button:hover {
@@ -62,13 +64,11 @@
         <a href="#" class="button">Back to Top</a>
     </div>
 
+    <!-- Add more sections as needed -->
+
     <!-- Add the button to play dial-up internet sound -->
     <div class="container">
         <button class="button" onclick="playDialUpSound()">Play Dial-up Internet Sound</button>
-    </div>
-    
-    <!-- Add the "Stop All Audio" button below the "Play Dial-up Internet Sound" button -->
-    <div class="container">
         <button class="button" onclick="stopAllAudio()">STOP ALL AUDIO</button>
     </div>
 
@@ -78,15 +78,15 @@
     <script>
         function playDialUpSound() {
             var audio = document.getElementById("dialUpSound");
-            audio.volume = 0.2; // Set volume to 20%
+            audio.volume = 0.2;
             audio.play();
         }
 
         function stopAllAudio() {
-            var allAudio = document.querySelectorAll("audio");
-            allAudio.forEach(function(audio) {
-                audio.pause();
-            });
+            var audioElements = document.getElementsByTagName("audio");
+            for (var i = 0; i < audioElements.length; i++) {
+                audioElements[i].pause();
+            }
         }
     </script>
 
