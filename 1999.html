@@ -61,5 +61,20 @@
 
     <!-- Add more sections as needed -->
 
+    <!-- Add the button to play dial-up internet sound -->
+    <div class="container">
+        <button class="button" onclick="playDialUpSound()">Play Dial-up Internet Sound</button>
+    </div>
+
+    <!-- Add the dial-up internet sound -->
+    <audio id="dialUpSound" src="dial-up-internet.mp3"></audio>
+
+    <script>
+        // Function to play the dial-up internet sound
+        function playDialUpSound() {
+            var dialUpSound = document.getElementById("dialUpSound");
+            dialUpSound.play();
+        }
+    </script>
 </body>
 </html>
