@@ -67,14 +67,16 @@
     </div>
 
     <!-- Add the dial-up internet sound -->
-    <audio id="dialUpSound" src="audio/dial-up-modem-01.mp3" volume="0.2"></audio>
+    <audio id="dialUpSound" src="audio/dial-up-modem-01.mp3"></audio>
+    <button onclick="setVolume(0.2)">Play Sound</button>
 
     <script>
-        // Function to play the dial-up internet sound
-        function playDialUpSound() {
-            var dialUpSound = document.getElementById("dialUpSound");
-            dialUpSound.play();
-        }
+      function setVolume(volume) {
+        var audio = document.getElementById("dialUpSound");
+        audio.volume = volume;
+        audio.play();
+      }
     </script>
+
 </body>
 </html>
